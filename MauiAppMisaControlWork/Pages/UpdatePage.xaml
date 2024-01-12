@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppMisaControlWork.Pages.UpdatePage"
+             Title="Изменение локации">
+    <VerticalStackLayout  Padding="10">
+        <!-- Наименование -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start">Наименование</Label>
+        <Entry  x:Name ="p_name" Text=""/>
+
+        <!-- Тип -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start">Тип</Label>
+        <Picker x:Name="p_type">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Город</x:String>
+                    <x:String>Регион</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Население -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start">Население (тыс.чел)</Label>
+        <Entry x:Name ="p_residants" Keyboard="Numeric" Text=""/>
+
+        <!-- Бюджет -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start">Бюджет (млрд.руб)</Label>
+        <Entry x:Name ="p_budget" Keyboard="Numeric" Text=""/>
+
+        <!-- Мэр -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start">Мэр</Label>
+        <Entry x:Name ="p_mayor" Text=""/>
+
+        <!-- Кнопка "Применить" -->
+        <Button x:Name="btnUpdate" Text="Применить" Clicked="Update" Margin="10"/>
+        <!-- Кнопка "На главную" -->
+        <Button x:Name="btnMainPage" Text="На главную" Clicked="MainPage" Margin="10"/>
+        <!-- Кнопка "Назад" -->
+        <Button x:Name="btnBack" Text="Назад" Clicked="btnBack_Clicked" Margin="10" IsVisible="false"/>
+    </VerticalStackLayout>
+</ContentPage>

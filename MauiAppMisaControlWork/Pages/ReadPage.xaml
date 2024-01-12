@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppMisaControlWork.Pages.ReadPage">
+    <VerticalStackLayout>
+        <!-- Наименование -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start" Padding="10">Наименование</Label>
+        <Label FontSize="15" HorizontalOptions="Start" Padding="10" x:Name="p_name"/>
+
+        <!-- Тип -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start" Padding="10">Тип</Label>
+        <Label FontSize="15" HorizontalOptions="Start" Padding="10" x:Name="p_type"/>
+
+        <!-- Население -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start" Padding="10">Население (тыс.чел)</Label>
+        <Label FontSize="15" HorizontalOptions="Start" Padding="10" x:Name="p_residants"/>
+
+        <!-- Бюджет -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start" Padding="10">Бюджет (млрд.руб)</Label>
+        <Label FontSize="15" HorizontalOptions="Start" Padding="10" x:Name="p_budget"/>
+
+        <!-- Мэр -->
+        <Label FontAttributes="Bold" FontSize="15" HorizontalOptions="Start" Padding="10">Мэр</Label>
+        <Label FontSize="15" HorizontalOptions="Start" Padding="10" x:Name="p_mayor"/>
+
+        <!-- Кнопка "На главную" -->
+        <Button x:Name="btnMainPage" Text="На главную" Clicked="MainPage" Margin="10"/>
+        <!-- Кнопка "Удалить" -->
+        <Button x:Name="btnDelete" Text="Удалить локацию" Clicked="btnDelete_Clicked" Margin="10"/>
+        <!-- Кнопка "Изменить" -->
+        <Button x:Name="btnUpdate" Text="Изменить локацию" Clicked="btnUpdate_Clicked" Margin="10"/>
+    </VerticalStackLayout>
+</ContentPage>

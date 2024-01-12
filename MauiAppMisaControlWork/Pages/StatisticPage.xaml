@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppMisaControlWork.Pages.StatisticPage"
+             Title="Статистика">
+
+    <VerticalStackLayout VerticalOptions="FillAndExpand"
+    Padding="10,0"
+    Spacing="50">
+        <Label Text="Статистика по локациям"/>
+        <ListView  HeightRequest="150" x:Name="Statistics" ItemsSource="{Binding StInfo}">
+            <ListView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Имя" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Медиана" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="Среднее" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="3" Text="Макс." FontSize="15" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="4" Text="Мин." FontSize="15" FontAttributes="Bold" HorizontalOptions="Center"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid RowSpacing="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding name}" FontSize="15" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding median}" FontSize="15" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding mean}" FontSize="15" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding max}" FontSize="15" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                <Label Grid.Row="0" Grid.Column="4" Text="{Binding min}" FontSize="15" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button VerticalOptions="EndAndExpand" x:Name="btnMainPage" Text="На главную" Clicked="MainPage"/>
+    </VerticalStackLayout>
+</ContentPage>
